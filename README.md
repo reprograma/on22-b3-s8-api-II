@@ -1,4 +1,4 @@
-# Tema da Aula
+# Introdução à API: GET + POST
 
 Turma Online 22 - Todas em Tech | Back-end | Semana 8 | 2023 | Professora Gaia Maria
 
