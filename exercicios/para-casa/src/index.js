@@ -24,6 +24,21 @@ app.get('/filmes', (resquest, response) => {
 //rota de busca por titulo
 app.get("/filmes/title", (request, response) => {
     let tituloRequest = request.query.title 
-    let filmeEncontrado = filmesJson.filter(filme => filme.title== tituloRequest) 
+    let filmeEncontrado = filmesJson.filter(filme => filme.title == tituloRequest) 
     response.status(200).send(filmeEncontrado)
 })
+
+//rota de busca por id
+app.get("/filmes/id", (request, response) => {
+    let idRequest = request.query.id
+    let filmeEncontrado = filmesJson.filter(filme => filme.id == idRequest) 
+    response.status(200).send(filmeEncontrado)
+})
+
+//rota de busca por diretor
+app.get("/filmes/director", (request, response) => {
+    let diretorRequest = request.query.director
+    let filmeEncontrado = filmesJson.filter(filme => filme.director == diretorRequest)
+    response.status(200).send(filmeEncontrado)
+})
+

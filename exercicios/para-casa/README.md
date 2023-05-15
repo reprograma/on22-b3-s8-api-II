@@ -6,7 +6,7 @@
 - Realize as importações e requisições necessarias  OK
 - Crie um rota  **GET** que liste todos os filmes Ghibli; Ok
 
-- Crie rotas **GET** que possibilite buscar filme pelo título, id e pelo diretor; 
+- Crie rotas **GET** que possibilite buscar filme pelo título, id e pelo diretor; OK
 
 - Devo conseguir cadastrar novos filme com uma rota **POST**
 ---
