@@ -2,11 +2,11 @@
 
 ## Nome do Exercicio
 
-- Crie seu servidor e uma rota padrão
+- Crie seu servidor e uma rota padrão 
 - Realize as importações e requisições necessarias  
 - Crie um rota  **GET** que liste todos os filmes Ghibli;
 
-- Crie rotas **GET** que possibilite buscar filme pelo título, id e pelo diretor;
+- Crie rotas **GET** que possibilite buscar filme pelo título, id  e pelo diretor ;
 
 - Devo conseguir cadastrar novos filme com uma rota **POST**
 ---
