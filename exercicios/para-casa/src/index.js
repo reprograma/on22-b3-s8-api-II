@@ -51,12 +51,20 @@ app.post("/filmesGhibli", (request, response) => { //adicionar filme
     let titleRequest = request.body.title //criando titulo
     let directorRequest = request.body.director //criando diretor
     let descriptionRequest = request.body.description //criando a descrição
+    let original_titleRequest = request.body.original_title
+    let original_title_romanisedRequest = request.body.original_title_romanised
+    let release_dateRequest = request.body.release_date
+    let running_timeRequest = request.body.running_time
 
     let novoFilmeGhibli = {
         id: (filmesGhibli.length) +1,
         title: titleRequest,
         director: directorRequest,
         description: descriptionRequest,
+        original_title: original_titleRequest,
+        original_title_romanised: original_title_romanisedRequest,
+        release_date: release_dateRequest,
+        running_time: running_timeRequest
     }
 
     filmesGhibli.push(novoFilmeGhibli)
