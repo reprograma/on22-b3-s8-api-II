@@ -17,7 +17,7 @@ app.get("/",(_req, res)=>{
     }]);
 });
 
-// Minha ota de filmes
+// Minha rota de filmes
 app.get("/filmes",(_req, res)=>{
     res.status(200).send(filmesJson);
 });
