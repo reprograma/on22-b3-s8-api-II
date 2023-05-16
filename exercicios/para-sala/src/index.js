@@ -54,7 +54,7 @@ app.post('/filmes', (request, response) => { //Eu quero adicionar um filme, ele 
 })
 
 app.get('/filmes/:id', (request, response) => {
-    let idRequest = resquest.params.id
+    let idRequest = request.params.id
     let filmeEncontrado = filmesJson.find(filme => filme.id == idRequest)
     response.status(200).send(filmeEncontrado)
 })

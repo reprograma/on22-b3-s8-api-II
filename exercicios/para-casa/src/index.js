@@ -42,3 +42,31 @@ app.get("/filmes/director", (request, response) => {
     response.status(200).send(filmeEncontrado)
 })
 
+app.post("/filmes", (request, response) => {
+    let tituloRequest = request.body.title
+    let tituloOriginalRequest = request.body.original_title
+    let tituloRomanizadoRequest = request.body.original_title_romanised
+    let descrisaoRequest = request.body.description
+    let diretorRequest = request.body.director
+    let produtoraRequest = request.body.producer
+    let lancamentoRequest = request.body.release_date
+    let tempoRequest = request.body.running_time
+
+    let novoFilme = {
+        id: (filmesJson.length) + 1,
+        title: tituloRequest,
+        original_title: tituloOriginalRequest,
+        original_title_romanised: tituloRomanizadoRequest,
+        description: descrisaoRequest,
+        director: diretorRequest,
+        producer: produtoraRequest,
+        release_date: lancamentoRequest,
+        running_time: tempoRequest,
+    }
+    filmesJson.push(novoFilme)
+    response.status(201).json({
+        'mensage': 'Novo filme adicionado!',
+        novoFilme
+    })
+})
+
