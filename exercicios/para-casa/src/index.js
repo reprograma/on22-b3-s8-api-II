@@ -29,8 +29,8 @@ app.get("/filmes/title", (request, response) => {
 })
 
 //rota de busca por id
-app.get("/filmes/id", (request, response) => {
-    let idRequest = request.query.id
+app.get("/filmes/:id", (request, response) => {
+    let idRequest = request.params.id
     let filmeEncontrado = filmesJson.filter(filme => filme.id == idRequest) 
     response.status(200).send(filmeEncontrado)
 })
