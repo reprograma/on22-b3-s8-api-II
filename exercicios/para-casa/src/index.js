@@ -1,10 +1,13 @@
 const express = require("express");
 const ghibliFilmsJson = require("./model/ghiblifilmes.json");
+require('dotenv').config();
 const app = express();
+const port = process.env.API_PORT || 3030;
+
 
 app.use(express.json());
-app.listen(3030, ()=> {
-    console.log("Servidor rodando na porta 3030");
+app.listen(port, ()=> {
+    console.log("Servidor rodando na porta", port);
 });
 
 // criando uma rota que traz todos os filmes
