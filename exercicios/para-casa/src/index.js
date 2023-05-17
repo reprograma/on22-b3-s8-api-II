@@ -1,9 +1,9 @@
 const express = require("express");
-const ghibliFilmsJson = require("./model/ghiblifilmes.json");
-require('dotenv').config();
 const app = express();
-const port = process.env.API_PORT || 3030;
+const ghibliFilmsJson = require("./model/ghiblifilmes.json");
 
+require('dotenv').config();
+const port = process.env.API_PORT || 3030;
 
 app.use(express.json());
 app.listen(port, ()=> {
