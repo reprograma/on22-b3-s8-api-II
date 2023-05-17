@@ -6,7 +6,8 @@
     ///////.///////.                                                    /___/                                                      .///////.///////
     ///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////.///////
 
-const app = require("express")()
+const express = require("express")
+const app = express()
 const movies = require("./src/model/ghiblifilmes.json")
 const PORT = 8080
 
@@ -22,50 +23,83 @@ app.get("/filmes", (req, res) => {
     res.status(200).json({ movies, message: "Here's our list of movies!" })
 })
 
-app.get("/filmes/search", (req, res) => {
+app.get("/filmes/title-search", (req, res) => {
     const movieTitle = req.query.title
-    const movie = movies.filter(movie => movie.title === movieTitle)
+    const movieByTitle = movies.filter(movie => movie.title === movieTitle)
 
     if (movie.length > 0) {
-        res.status(200).json({ movie, message: "here is the movie you asked for!" })
+        res.status(200).json(
+            [{
+                message: "here is the movie you asked for!",
+                movieByTitle
+            }]
+        )
     } else {
-        res.status(404).json({ error: "Movie not found :(" })
+        res.status(404).json({ error: "No movie by this title :(" })
     }
 })
 
-app.get("/filmes/search", (req, res) => {
-    const movieId = req.query.id
-    const movie = movies.filter(movie => movie.id === movieId)
+app.get("/filmes/id-search", (req, res) => {
+    const movieID = req.query.id
+    const movieByID = movies.filter(movie => movie.id === movieID)
 
     if (movie.length > 0) {
-        res.status(200).json({movie, message:"here is the movie you asked for!" })
+        res.status(200).json(
+            [{
+                message: "here is the movie you asked for!",
+                movieByID
+            }]
+        )
     } else {
-        res.status(404).json({error: "Movie not found :(" })
+        res.status(404).json({ error: "No movie with the given ID :(" })
     }
 })
 
-app.get("/filmes/search", (req, res) => {
+app.get("/filmes/director-search", (req, res) => {
     const movieDirector = req.query.director
-    const movie = movies.filter(movie => movie.title === movieId)
+    const moviesByDirector = movies.filter(movie => movie.director === movieDirector)
 
-    if (movie.length > 0) {
-        res.status(200).json({movie, message:"here is the movie you asked for!" })
+    if (movies.length > 0) {
+        res.status(200).json(
+            [{
+                message: "here are the movies you asked for!",
+                moviesByDirector,
+            }]
+        )
     } else {
-        res.status(404).json({error: "Movie not found :(" })
+        res.status(404).json({ error: "No movies by this director :(" })
     }
 })
 
-app.post("/filmes/create", (req, res) => {
+app.post("/filmes/add-movie", (req, res) => {
 
-    let newMovie = {
-        id: (movies.length) + 1
-        title:
-        original_title:
-        original_title_romanised:
-        description:
-        director:
-        producer:
-        release_date:
-        running_time:
+    const requestedTitle = req.body.title
+    const requestedOriginalTitle = req.body.originalTitle
+    const requestedOriginalTitleRomanised = req.body.originalTitleRomanised
+    const requestedDescription = req.body.description
+    const requestedDirector = req.body.director
+    const requestedProducer = req.body.producer
+    const requestedReleaseDate = req.body.releaseDate
+    const requestedRunningTime = req.body.runningTime
+    
+
+    const newMovie = {
+        id: (movies.length) + 1,
+        title: requestedTitle,
+        originalTitle: requestedOriginalTitle,
+        originalTitleRomanised: requestedOriginalTitleRomanised,
+        description: requestedDescription,
+        director: requestedDirector,
+        producer: requestedProducer,
+        releaseDate: requestedReleaseDate,
+        runningTime: requestedRunningTime
     }
+  
+    movies.push(newMovie)
+    res.status(201).json(
+        [{
+            message: "Movie added successfully!",
+            //newMovie
+        }]
+    )
 })
