@@ -18,3 +18,10 @@ app.get("/filmesGhibli/title", (req, res)=>{
     let filmDetected = ghibliFilmsJson.filter(ghibliFilm => ghibliFilm.title == titleRequest);
     res.status(200).send(filmDetected);
 });
+
+// Rota para pegar o filme pelo ID
+app.get("/filmesGhibli/id", (req, res)=>{
+    let idRequest = req.query.id;
+    let filmDetected = ghibliFilmsJson.filter(ghibliFilm => ghibliFilm.id == idRequest);
+    res.status(200).send(filmDetected);
+});
