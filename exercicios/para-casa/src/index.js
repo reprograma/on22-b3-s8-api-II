@@ -25,3 +25,10 @@ app.get("/filmesGhibli/id", (req, res)=>{
     let filmDetected = ghibliFilmsJson.filter(ghibliFilm => ghibliFilm.id == idRequest);
     res.status(200).send(filmDetected);
 });
+
+// Rota para pegar o filme pelo director
+app.get("/filmesGhibli/director", (req, res)=>{
+    let directorRequest = req.query.director;
+    let filmDetected = ghibliFilmsJson.filter(ghibliFilm => ghibliFilm.director == directorRequest);
+    res.status(200).send(filmDetected);
+});
