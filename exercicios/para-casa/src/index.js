@@ -58,7 +58,7 @@ app.post('/filmesGhibli', (request, response) => {
         release_date: release_date_add,
         running_time: running_time_add,
     }
-    ghibliFilmesJson.push(newMovie)
+    filmesGhibli.push(newMovie)
     response.status(201).json([{
         'message': 'Novo filme adicionado com sucesso!',
         newMovie
