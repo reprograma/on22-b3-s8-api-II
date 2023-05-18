@@ -23,9 +23,9 @@ app.get("/filmesGhibli/title", (req, res)=>{
 });
 
 // Rota para pegar o filme pelo ID
-app.get("/filmesGhibli/id", (req, res)=>{
+app.get("/filmesGhibli/:id", (req, res)=>{
 	let idRequest = req.params.id;
-	let filmDetected = ghibliFilmsJson.filter(ghibliFilm => ghibliFilm.id == idRequest);
+	let filmDetected = ghibliFilmsJson.find(ghibliFilm => ghibliFilm.id == idRequest);
 	res.status(200).send(filmDetected);
 });
 
