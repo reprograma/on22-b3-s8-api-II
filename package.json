@@ -1,0 +1,25 @@
+{
+  "name": "on22-b3-s8-api-ii",
+  "version": "1.0.0",
+  "description": "Turma Online 22 - Todas em Tech | Back-end | Semana 8 | 2023 | Professora Gaia Maria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./exercicios/para-sala/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alinear-me/on22-b3-s8-api-II.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alinear-me/on22-b3-s8-api-II/issues"
+  },
+  "homepage": "https://github.com/alinear-me/on22-b3-s8-api-II#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
