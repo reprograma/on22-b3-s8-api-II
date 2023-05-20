@@ -1,75 +1,61 @@
-// requisições necessarias 
-const filmesJson = require('./model/filmes.json') // acessando o json de filmes 
-const express = require('express') // chamo o express 
-const app = express() //executo o express
+//requisições necessárias:
+const express = require("express");  //chama o express
+const filmesJson =  require("./model/filmes.json"); //acessando o json de filmes
+const app = express(); //execução do express
 
-app.use(express.json()) // esta fazendo o body parser, OU SEJA, converter o body da requisição para json (nosso arquivo)
 
-// minha porta
-app.listen(8080, () => { //app escuta aqui (normalmente temos um arquuvo para app)
-    console.log("Servidor na porta 8080")
+app.use(express.json()) //construção do bodyparse = traaduzindo nosso código para json
+
+// minha porta:
+app.listen(8080, () => {
+    console.log(`O Servidor está rodando na porta 8080, GAROTA`)
 })
 
-//minha rota padrao
-app.get("/", (request, response) => { //
-    response.status(200).json([
-        {
-            "message": "Deu certo garota!!!! API de Filmes on e roteando"
-        }
-    ])
+// minha rota padrão/princpical 
+app.get('/', (request, response) => {
+    response.status(200).json([{
+        'message': 'deu certo, garota. API de filmes ON e ROTEANDO'
+    }])
 })
 
-//minhas rotas e controllers
-
+//minha rota de filmes
 app.get("/filmes", (request, response) => {
-    response.status(200).send(filmesJson)// va no json e mande os filmes
+    response.status(200).send(filmesJson)
 })
 
-app.get("/filmes/buscar/ano", (request, response) => {
-    let idRequest = request.query.ano // eu quero encontar o ano 
-    let filmeEncontrado = filmesJson.filter(filme => filme.ano == idRequest) // computador filtra os anos - inicio da callback (ligar de volta)
-    response.status(200).send(filmeEncontrado) // me envia o que encontrou - fim da callback - eu chamei ela de novo 
-})
-// quando a gente faz uma callback basicamente a gente estabelece uma função > depois chama ela novamente como paramtro
-// meme ines brasil
+//minha rota de filme por ano
+app.get("/filmes/ano", (request, response) => {
+    let anoRequest = request.query.ano //eu quero encontrar filmes por ano
+    let filmeEncontrado = filmesJson.filter(filme => filme.ano == anoRequest) //computador filtra os anos e me dá somente o que eu pedi
+    response.status(200).send(filmeEncontrado)
 
-app.get("/filmes/buscar/:id", (request, response) => { // eu quero achar o filme pelo id
-    let idRequest = request.params.id // meu parametro é o id 
-    let filmeEncontrado = filmesJson.find(filme => filme.id == idRequest) // achou? find
-    response.status(200).send(filmeEncontrado) //- me mostra o que eu pedi
 })
 
-app.get("/titulo", (request, response) => { // eu quero o titulo
-    let tituloRequest = request.query.titulo.toLocaleLowerCase() // meu parametro é o titulo, me manda mesmo com letras maisculas
-    console.log(tituloRequest)
-    let filmeEncontrado = filmesJson.filter( // filtrou? então manda ai
-        filme => filme.titulo.toLocaleLowerCase().includes(tituloRequest) //includes: ele percorre o array e se encontrar o titulo ele de
-                                                                         // devolve - pq ele esta procurando "o que inclui"
-    )
-    response.status(200).send(filmeEncontrado)// devolve quando o filme é cadastrado 
+app.get("/filmes/:id", (request, response) => {
+    let idRequest = request.params.id
+    let filmeEncontrado = filmesJson.find(filme => filme.id == idRequest)
+    response.status(200).send(filmeEncontrado)
 
-});
-
-app.post("/filmes", (request, response) => { // app eu quero adiconar um filme
-    let generoRequest = request.body.genero // ele tem genero
-    let anoRequest = request.body.ano // ele tem ano
+//minha rota para post
+app.post("/filmes", (request, response) => { //eu quero add um filme, ele tem:
+    let generoRequest = request.body.genero //ele tem genero
+    let anoRequest = request.body.ano   //ele tem ano
     let tituloRequest = request.body.titulo // ele tem titulo
-    let resumoRequest = request.body.resumo // e ele tem um resumo 
-    //como é uma adição e eu preciso escrever um texto vou adionar esse corpo - ta vendo o body?
+    let resumoRequest = request.body.resumo // ele tem resumo
 
-    let novoFilme = { // criando um novo filme
-        id: (filmesJson.length) + 1, // o lenght serve para retornar a quantidade de carcteres de uma string ou o
-                                     // tamanho de um array - lenght +1 aqui pq ele percorre os id e p/ não repetir o id add +1
-        genero: generoRequest,// esse é o genero
-        ano: anoRequest, // esse é o ano
-        titulo: tituloRequest, // esse é o titulo
-        resumo: resumoRequest, // esse o resumo
+    let novoFilme = {
+        id: (filmesJson.length) + 1,
+        genero: generoRequest,
+        ano: anoRequest,
+        titulo: tituloRequest,
+        resumo: resumoRequest,
     }
-    filmesJson.push(novoFilme)// assim como no git, aqui a gente empurra o filme pronto
-    response.status(201).json(// defini uma informação de resposta - é isso que ele diz quando cadastra
-        [{
-            "mensagem": "seu filme foi cadastrado",
-            novoFilme // aqui ele retorna o filme que foi cadastrado
-        }]
-    )
+    filmesJson.push(novoFilme)
+
+    response.status(201).json([{
+        'message': 'o filme foi cadastrado, gatanonan', 
+        novoFilme
+    }])
 })
+
+

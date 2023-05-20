@@ -1,4 +1,4 @@
-# Exercício de Casa 🏠 
+# Exercício de Casa 🏠
 
 ## Nome do Exercicio
 
@@ -8,8 +8,7 @@
 
 - Crie rotas **GET** que possibilite buscar filme pelo título, id e pelo diretor;
 
-- Devo conseguir cadastrar novos filme com uma rota **POST**
----
+- Devo conseguir cadastrar novos filme com uma rota **POST** ---
 
 Terminou o exercício? Dá uma olhada nessa checklist e confere se tá tudo certinho, combinado?!
 
