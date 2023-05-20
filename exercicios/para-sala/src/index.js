@@ -14,7 +14,7 @@ app.listen(8080, () => {
 // minha rota padrão/princpical 
 app.get('/', (request, response) => {
     response.status(200).json([{
-        'message': 'deu certo, garota. API de livros ON e ROTEANDO'
+        'message': 'deu certo, garota. API de filmes ON e ROTEANDO'
     }])
 })
 
