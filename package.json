@@ -18,6 +18,10 @@
     "url": "https://github.com/alinear-me/on22-b3-s8-api-II/issues"
   },
   "homepage": "https://github.com/alinear-me/on22-b3-s8-api-II#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^2.0.22"

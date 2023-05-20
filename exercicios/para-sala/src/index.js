@@ -35,18 +35,6 @@ app.get("/filmes/:id", (request, response) => {
     let idRequest = request.params.id
     let filmeEncontrado = filmesJson.find(filme => filme.id == idRequest)
     response.status(200).send(filmeEncontrado)
-})
-
-app.get("/titulo", (request, response) => { // eu quero o titulo
-    let tituloRequest = request.query.titulo.toLocaleLowerCase() // meu parametro é o titulo, me manda mesmo com letras maisculas
-    console.log(tituloRequest)
-    let filmeEncontrado = filmesJson.filter( // filtrou? então manda ai
-        filme => filme.titulo.toLocaleLowerCase().includes(tituloRequest) //includes: ele percorre o array e se encontrar o titulo ele de
-                                                                         // devolve - pq ele esta procurando "o que inclui"
-    )
-    response.status(200).send(filmeEncontrado)// devolve quando o filme é cadastrado 
-
-});
 
 //minha rota para post
 app.post("/filmes", (request, response) => { //eu quero add um filme, ele tem:
@@ -69,3 +57,5 @@ app.post("/filmes", (request, response) => { //eu quero add um filme, ele tem:
         novoFilme
     }])
 })
+
+
