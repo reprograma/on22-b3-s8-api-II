@@ -1,0 +1,44 @@
+[
+  {
+    "id": "5d0bb50f771b219e2a2aa020",
+    "genero": "Fantasia",
+    "ano":2001,
+    "titulo": "A Viagem de Chihiro",
+    "resumo": "Chihiro e seus pais estão se mudando para uma cidade diferente. A caminho da nova casa, o pai decide pegar um atalho. Eles se deparam com uma mesa repleta de comida, embora ninguém esteja por perto. Chihiro sente o perigo, mas seus pais começam a comer. Quando anoitece, eles se transformam em porcos. Agora, apenas Chihiro pode salvá-los."
+  },
+  {
+    "id": "5d0bb50f771b219e2a2aa023",
+    "genero": "Musical",
+    "ano":2004,
+    "titulo": "O Fantasma da Ópera",
+    "resumo": "O Fantasma, em seu esconderijo em baixo de uma casa de ópera em Paris, no Século 19, planeja uma forma de se aproximar da vocalista Christine Daae. Ele, usando uma máscara para esconder um defeito congênito, consegue os papéis principais para a estrela, mas ela se apaixona pelo benfeitor das artes, Raoul. Apavorado com a ideia de sua ausência, o Fantasma cria um plano para manter Christine ao seu lado, enquanto Raoul tenta derrubar o esquema."
+  },
+  {
+    "id": "5d0bb50f771b219e2a2aa026",
+    "genero": "Fantasia",
+    "ano":2006,
+    "titulo": "O Labirinto do Fauno",
+    "resumo": "Em 1944, na Espanha, a jovem Ofélia e sua mãe doente chegam ao posto do novo marido de sua mãe, um sádico oficial do exército que está tentando reprimir uma guerrilheira. Enquanto explorava um labirinto antigo, Ofélia encontra o Pan fauno, que diz que a menina é uma lendária princesa perdida e que ela precisa completar três tarefas perigosas a fim de se tornar imortal."
+  },
+  {
+    "id": "5d0bb50f771b219e2a2aa029",
+    "genero": "Infantil",
+    "ano":2003,
+    "titulo": "Irmão Urso",
+    "resumo": "Kenai é um bravo jovem índio com uma aversão especial por ursos. Quando seu irmão Sitka é morto por um, Kenai mata o urso, mas é magicamente transformado em um deles. Para piorar a situação, seu outro irmão, Denahi, jura matar o urso que Kenai se tornou. A única esperança de Kenai é uma montanha mágica, onde ele acredita que pode ser transformado de volta em um ser humano e ele pede a Koda, um verdadeiro filhote de urso, para ajudá-lo a chegar lá."
+  },
+  {
+    "id": "5d0bb50f771b219e2a2aa02c",
+    "genero": "Fantasia",
+    "ano":2003,
+    "titulo": "O Senhor dos Anéis: O Retorno do Rei",
+    "resumo": "O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima. Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam para o local na intenção de ajudar a resistência."
+  },
+  {
+    "id": "5d0bb50f771b219e2a2aa02f",
+    "genero": "Terror",
+    "ano":1988,
+    "titulo": "A Hora do Pesadelo - Os Guerreiros dos Sonhos",
+    "resumo": "Adolescentes internados em clínica psiquiátrica, atormentados por pesadelos parecidos, passam por tratamento com uma nova droga e juntam suas forças para tentar se livrar da influência nefasta de Freddy Krueger, o assassino que assombra suas noites."
+  }
+]
