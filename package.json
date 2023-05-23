@@ -1,0 +1,17 @@
+{
+  "name": "on22-b3-s8-api-ii",
+  "version": "1.0.0",
+  "description": "Turma Online 22 - Todas em Tech | Back-end | Semana 8 | 2023 | Professora Gaia Maria",
+  "main": "index-2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./exercicios/para-casa/src/index-2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
